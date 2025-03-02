@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+    <div class="navbar">
+                <!-- From Uiverse.io by akshat-patel28 --> 
+        <div class="button-container">
+            <button class="button">
+                <span>Bisection</span>
+            </button>
+            <button class="button">
+                <span>False</span>
+            </button>
+            <button class="button">
+                <span>Fixed</span>
+            </button>
+
+            <button class="button">
+                <span>Newton</span>
+            </button>
+        </div>
+    </div>
+
+
+    <div class="top-container">
+
+        <div class="bottom-container">
+            <button class="extra-button" data-page="bi.html">Bisection</button>
+        </div>
+
+        <div class="small-box">
+            <div class="container">
+                <div class="head-title">
+                    <h2 id="method-title">False Position Method Calculator</h2>
+                </div>
+
+                <form id="method-form-false-position" data-page="2">
+                
+                    <div class="function-box">
+                        <label for="function-input">Function</label>
+                        <div class="input-container">
+                            <input type="text" id="function" placeholder="Enter function" value="-2+7*x-5*x^2+6*x^3">
+                            <div class="icon">i
+                                <div class="tooltip">
+                                    <table>
+                                        <caption><b>Input Functions</b></caption>
+                                        <thead>
+                                            <tr>
+                                                <th>Function</th>
+                                                <th>Input Value</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr> <td>x³</td> <td>x^3</td> </tr>
+                                            <tr> <td>√x</td> <td>sqrt(x)</td> </tr>
+                                            <tr> <td>³√x</td> <td>root(3,x)</td> </tr>
+                                            <tr> <td>sin(x)</td> <td>sin(x)</td> </tr>
+                                            <tr> <td>cos(x)</td> <td>cos(x)</td> </tr>
+                                            <tr> <td>tan(x)</td> <td>tan(x)</td> </tr>
+                                            <tr> <td>sec(x)</td> <td>sec(x)</td> </tr>
+                                            <tr> <td>cosec(x)</td> <td>csc(x)</td> </tr>
+                                            <tr> <td>cot(x)</td> <td>cot(x)</td> </tr>
+                                            <tr> <td>sin⁻¹(x)</td> <td>asin(x)</td> </tr>
+                                            <tr> <td>cos⁻¹(x)</td> <td>acos(x)</td> </tr>
+                                            <tr> <td>tan⁻¹(x)</td> <td>atan(x)</td> </tr>
+                                            <tr> <td>sin²(x)</td> <td>sin^2(x)</td> </tr>
+                                            <tr> <td>logᵧ(x)</td> <td>log(y,x)</td> </tr>
+                                            <tr> <td>log₁₀(x)</td> <td>log(x)</td> </tr>
+                                            <tr> <td>logₑ(x)</td> <td>ln(x)</td> </tr>
+                                            <tr> <td>e^x</td> <td>exp(x) or e^x</td> </tr>
+                                            <tr> <td>e^(2x)</td> <td>exp(2x) or e^(2x)</td> </tr>
+                                            <tr> <td>∞</td> <td>inf</td> </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <div class="bound-box">
+                        <div class="input-group">
+                            <label for="xl">Lower Bound</label>
+                            <input type="number" id="xl" placeholder="Xl" step="any" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="xu">Upper Bound</label>
+                            <input type="number" id="xu" placeholder="Xu" step="any" required>
+                        </div>
+                    </div>                
+                    
+
+                    <div class="error-box">
+                        <label>Error Tolerance (%) </label>
+                        <input type="number" id="error" value="5"><br>
+                    </div>
+
+
+                    <div class="decimal-box">
+                        <label>Digits after decimal point: <span id="decimalValue">3</span></label>
+                        <input type="range" id="decimalDigits" min="0" max="10" value="3" step="1" oninput="updateDecimalValue(this.value)">
+                        <br>
+                    </div>
+
+                    <div class="button-box">
+                        <button type="submit" class="main-button">Calculate</button>
+                        <button type="reset" class="reset-button" onclick="resetFields()">Reset Value</button>
+                        
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="small-box">
+            <div class="result-table">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Iteration</th>
+                            <th>xl</th>
+                            <th>f(xl)</th>
+                            <th>xu</th>
+                            <th>f(xu)</th>
+                            <th>xr</th>
+                            <th>f(xr)</th>
+                            <th>Error%</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                    </tbody>
+                </table>
+
+                <h3 id="result" style="text-align: center;"></h3>
+            </div>
+        </div>
+
+    <script src="scripts.js" defer></script>
+</body>
+</html>
